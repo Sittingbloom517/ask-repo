@@ -1,0 +1,14 @@
+Package: askapt
+Version: 0.1.0
+Architecture: all
+Maintainer: LeviTech
+Depends: python3, apt
+Description: Smart package finder and package builder for Debian/Ubuntu
+ AskApt searches APT packages interactively and can build .deb packages
+ and development APT repositories from scripts and small applications.
+Filename: pool/main/a/askapt/askapt_0.1.0_all.deb
+Size: 9016
+MD5sum: 616203ad25587f81dc70e25cc290a894
+SHA1: d815762cb55049082b9ff4b69c79b7cfaaa414b8
+SHA256: 84c94b41a41e5bb718635f973bcfd945b0e6e12512174ecd1bbbb845220d7cbe
+
