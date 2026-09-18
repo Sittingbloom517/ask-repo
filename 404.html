@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+    <title>404 — Lost</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #09090b;
+        color: #fafafa;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 120%, rgba(217, 70, 239, 0.16), transparent 35%),
+          #09090b;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+      }
+
+      .glow {
+        position: fixed;
+        top: var(--y, 50%);
+        left: var(--x, 50%);
+        width: 36rem;
+        height: 36rem;
+        border-radius: 50%;
+        pointer-events: none;
+        background: rgba(168, 85, 247, 0.12);
+        filter: blur(100px);
+        translate: -50% -50%;
+        transition: top 180ms ease-out, left 180ms ease-out;
+      }
+
+      main {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      .card {
+        width: min(100%, 680px);
+        text-align: center;
+      }
+
+      .code {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        font-size: clamp(8rem, 30vw, 15rem);
+        font-weight: 900;
+        line-height: 0.8;
+        letter-spacing: -0.1em;
+        color: transparent;
+        background: linear-gradient(135deg, #fff 12%, #d8b4fe 47%, #e879f9 78%, #fff 110%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        filter: drop-shadow(0 0 42px rgba(217, 70, 239, 0.22));
+        animation: arrive 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      .code::after {
+        position: absolute;
+        inset: 50% -8% auto;
+        height: 1px;
+        content: "";
+        background: linear-gradient(90deg, transparent, rgba(232, 121, 249, 0.8), transparent);
+        box-shadow: 0 0 12px #d946ef;
+        animation: scan 4s ease-in-out infinite;
+      }
+
+      .eyebrow {
+        margin: 2.5rem 0 0.8rem;
+        color: #e879f9;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.7rem, 5vw, 2.7rem);
+        letter-spacing: -0.045em;
+      }
+
+      p {
+        max-width: 34rem;
+        margin: 1rem auto 0;
+        color: #a1a1aa;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+
+      a,
+      button {
+        min-width: 9.5rem;
+        padding: 0.85rem 1.15rem;
+        border: 1px solid #27272a;
+        border-radius: 999px;
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 650;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      a {
+        color: #18181b;
+        border-color: #fafafa;
+        background: #fafafa;
+      }
+
+      button {
+        color: #e4e4e7;
+        background: rgba(24, 24, 27, 0.7);
+      }
+
+      a:hover,
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+      button:hover {
+        border-color: #a855f7;
+        background: rgba(168, 85, 247, 0.1);
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 1.4rem;
+        left: 50%;
+        margin: 0;
+        color: #52525b;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        translate: -50% 0;
+      }
+
+      @keyframes arrive {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.92);
+          filter: blur(10px);
+        }
+      }
+
+      @keyframes scan {
+        0%, 100% { transform: translateY(-35px); opacity: 0; }
+        25%, 75% { opacity: 1; }
+        50% { transform: translateY(35px); opacity: 0.45; }
+      }
+
+      @media (max-width: 480px) {
+        .actions {
+          flex-direction: column;
+        }
+
+        a,
+        button {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::after {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main>
+      <section class="card" aria-labelledby="page-title">
+        <div class="code" aria-hidden="true">404</div>
+        <div class="eyebrow">Page not found</div>
+        <h1 id="page-title">Nothing blooms here yet.</h1>
+        <p>
+          This page doesn't exist, has moved, or is hiding somewhere between the pixels.
+          Don't worry — you'll find your way back.
+        </p>
+
+        <div class="actions">
+          <a href="/">Back to home</a>
+          <button type="button" onclick="history.back()">Previous page</button>
+        </div>
+      </section>
+    </main>
+
+    <p class="footer">SITTIGNBLOOM517.GITHUB.IO</p>
+
+    <script>
+      const root = document.documentElement;
+
+      window.addEventListener("pointermove", (event) => {
+        root.style.setProperty("--x", `${event.clientX}px`);
+        root.style.setProperty("--y", `${event.clientY}px`);
+      });
+    </script>
+  </body>
+</html>
